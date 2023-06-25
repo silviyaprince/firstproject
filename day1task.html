@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>Day 1 task</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<body>
+<h1>DIFFERENCE BETWEEN HTTP1.1 AND HTTP2</h1><br><br>
+<table style="width:100%">
+  <tr>
+    <th>HTTP1.1</th>
+    <th>HTTP2</th>
+</tr>
+<tr>
+<td>It works on the textual format.</td>
+<td>It works on the binary protocol.</td>
+</tr>
+<tr>
+<td>There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.</td>
+<td>It allows multiplexing so one TCP connection is required for multiple requests</td>
+</tr>
+<tr>
+<td>It uses requests resource Inlining for use getting multiple pages</td>
+<td>It uses PUSH frame by server that collects all multiple pages </td>
+</tr>
+<tr>
+<td>It compresses data by itself.</td>
+<td>It uses HPACK for data compression.</td>
+</tr>
+</table>
+<br>
+
+<img src="C:\Users\User\Desktop\FULL STACK DEVELOPMENT\pictures\HT.png" alt="http diagram">
+
+<br>
+<h1>OBJECTS AND ITS INTERNAL REPRESENTATION IN JAVASCRIPT</H1>
+<P><h2>1)Objects:</h2>
+<br>
+The following code assigns a simple value (Mercedes) to a variable named car:
+<br>
+var car = "Mercedes";<br>
+<br>
+Objects are variables too. But objects can contain many values.
+<br>
+The following code assigns many values (Mercedes, C-class, White and so on) to a variable named Car:
+<br>
+var car = {Make: “Mercedes”, Model: “C-Class”, Color: “White”, Fuel: Diesel, Weight: “850kg”, Mileage: “8Kmpl”, Rating: 4.5};
+<br>
+<br>
+The values are written as name:value pairs (name and value separated by a colon).
+<br>
+Syntax:
+<br>
+<br>
+var <object-name> = {key1: value1, key2: value2,... keyN: valueN};
+<br>
+<br>
+So, conclusion and definition for JS objects is “JavaScript objects are containers for named values”.
+<br>
+<br>
+<h2>2)Object Properties</h2>
+<br>
+The name:values pairs (in JavaScript objects) are called properties.
+<br>
+var car = {Make: “Mercedes”, Model: “C-Class”, Color: “White”, Fuel: Diesel, Weight: “850kg”,Mileage: “8Kmpl”, Rating: 4.5};
+<br>
+<br>
+From the above snippet, let’s have a look what falls under property and property value:
+
+No alt text provided for this image
+The object properties can be different primitive values, other objects and functions.
+
+Properties can usually be changed, added, and deleted, but some are read only.
+<br>
+The syntax for adding a property to an object is :
+<br>
+ObjectName.ObjectProperty = propertyValue;
+<br>
+<br>
+The syntax for deleting a property from an object is:
+<br>
+<br>
+delete ObjectName.ObjectProperty;
+<br>
+<br>
+The syntax to access a property from an object is:
+<br>
+<br>
+objectName.property        // Car.Make
+<br>
+<br>           //or
+<br>
+objectName["property”]    // Car["Make"]
+
+<br>          //or
+
+<br>
+objectName[expression]   // x = "Make"; Car[x]
+<br>
+<br>
+So, Conclusion and simple definition for Java Script properties is “Properties are the values associated with a JavaScript object”.
+<br>
+<br>
+<h2>3)Object Methods</h2>
+<br>
+Object Methods
+Objects can also have methods.
+
+Methods are actions that can be performed on objects.
+
+Methods are stored in properties as function definitions.<br>
+
+Property-------	Property Value<br>
+firstName------	John<br>
+lastName-------	Doe
+<br>
+age------------	50
+<br>
+eyeColor-------	blue
+<br>
+fullName-------	function() {return this.firstName + " " + this.lastName;}
+<br>
+<br>
+A method is a function stored as a property.
+<br>
+<br>
+Example
+const person = {
+  firstName: "John",<br>
+  lastName : "Doe",<br>
+  id       : 5566,<br>
+  fullName : function() {<br>
+    return this.firstName + " " + this.lastName;<br>
+  }<br>
+};<br>
+<br>
+In the example above, this refers to the person object.
+
+I.E. this.firstName means the firstName property of this.
+
+I.E. this.firstName means the firstName property of person.
+</P>
+<br>
+
+</body>
+</html>
