@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>day 2 task</title>
+</head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+body {
+  background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/3-color-block-pattern-csa-images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
+<table>
+<tr>
+<th><h2>DOCUMENT OBJECT</h2></th>
+<th><h2>WINDOW OBJECT</h2></th>
+</tr>
+<tr>
+<td>It is the object of window property.</td>
+<td>It is the object of the browser.</td>
+</tr>
+<tr>
+<td>All the tags, elements with attributes in HTML are part of the document.</td>
+<td>Global objects, functions, and variables of JavaScript are members of the window object.</td>
+</tr>
+<tr>
+<td>We can access the document from a window using the window. document</td>
+<td>We can access the window from the window only. i.e. window.window</td>
+</tr>
+<tr>
+<td>The document is part of BOM (browser object model) and dom (Document object model)</td>
+<td>The window is part of BOM, not DOM.</td>
+</tr>
+<tr>
+<td>Properties of document objects such as title, body, cookies, etc can also be accessed by a window like this window. document.title</td>
+<td>Properties of the window object cannot be accessed by the document object.</td>
+</tr><tr>
+<td>syntax:
+      document.propertyname;
+</td>
+<td>syntax:
+window.propertyname;
+</td>
+</tr>
+<tr>
+<td>example:
+     document.title :  will return the title of the document
+</td>
+<td>example:
+window.innerHeight : will return the height of the content area of the browser
+</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<h2>Hierarchy Of Objects</h2>
+<img src="http://cs.middlesexcc.edu/~schatz/csc241/handouts/dom.hierarchy1.gif" alt="window,document object">
+</body>
+</html>
+
