@@ -1,0 +1,302 @@
+1.TO PRINT ODD NUMBERS IN AN ARRAY
+
+ANONYMOUS FUNCTION
+var odd =function (arr) 
+ {
+ for(let i=0;i<arr.length;i++)
+{
+ if(arr[i]%2==0)
+{
+ console.log("");
+ }else 
+{
+console.log(arr[i]);
+}
+}
+}
+var arr=[2,3,4,5,6,7]
+odd(arr)
+
+IIFE:
+(function (arr) 
+ {
+ for(let i=0;i<arr.length;i++)
+{
+ if(arr[i]%2==0)
+{
+ console.log("");
+ }else 
+{
+console.log(arr[i]);
+}
+}
+})([2,3,4,5,6,7,]);
+
+2]TO CONVERT ALL THE STRINGS TO TITLE CASE IN A STRING ARRAY
+
+ANONYMOUS:
+var titleCase= function (arr) 
+{
+for(var i = 0; i< arr.length; i++){
+arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+}
+console.log(arr.join(" "));
+}
+arr=["good","morning","to","everyone"]
+titleCase(arr);
+
+IIFE:
+( function (arr) 
+{
+for(var i = 0; i< arr.length; i++){
+arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+}
+console.log(arr.join(" "));
+})([‘good’,’morning’,’to’,’everyone’]);
+
+
+3]SUM OF ALL NUMBERS IN AN ARRAY
+
+ANONYMOUS:
+var sum= function (arr) {
+let sum=0
+for(var i = 0; i< arr.length; i++){
+sum +=arr[i]
+}
+console.log(sum)
+}
+arr=[2,4,6,8,10]
+sum(arr);
+
+IIFE:
+(function (arr) {
+let sum=0
+for(var i = 0; i< arr.length; i++){
+sum +=arr[i]
+}
+console.log(sum)
+})([2,4,6,8,10]);
+
+
+
+4]RETURN ALL THE PRIME NUMBERS IN AN ARRAY
+
+ANONYMOUS:
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const primeNumbers = numbers.filter(function(number) {
+for (let i = 2, sqrt = Math.sqrt(number); i <= sqrt; i++) {
+if (number % i === 0) {
+return false; 
+}
+}
+return number > 1; 
+});
+primeNumbers.forEach(function(number) {
+console.log(number);
+
+IIFE:
+(function() {
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const isPrime = number => {
+for (let i = 2, sqrt = Math.sqrt(number); i <= sqrt; i++) {
+if (number % i === 0) {
+return false;
+}
+}
+return number > 1;
+};
+const primeNumbers = numbers.filter(isPrime);
+primeNumbers.forEach(number => {
+console.log(number);
+});
+})();
+
+5] RETURN ALL THE PALINDROMES IN AN ARRAY
+
+ANONYMOUS:
+const words = ['level', 'hello', 'racecar', 'world', 'madam'];
+const palindromes = words.filter(function(word) {
+const reversed = word.split('').reverse().join('');
+return word === reversed;
+});
+console.log(palindromes);
+
+IIFE:
+
+(function() {
+const words = ['level', 'hello', 'radar', 'world', 'madam'];
+const isPalindrome = word => {
+const reversed = word.split('').reverse().join('');
+return word === reversed;
+};
+const palindromeWords = words.filter(isPalindrome);
+palindromeWords.forEach(word => {
+console.log(word);
+});
+})();
+
+6]TO RETURN MEDIAN OF TWO SORTED ARRAYS OF SAME SIZE
+
+ANONYMOUS:
+var findMedianSortedArrays=function(arr1, arr2) {
+const mergedArray = arr1.concat(arr2); // Merge both arrays into a single array
+const sortedArray = mergedArray.sort((a, b) => a - b); // Sort the merged array in ascending order
+const length = sortedArray.length;
+const midIndex = Math.floor(length / 2);
+if (length % 2 !== 0) {
+return sortedArray[midIndex];
+} else {
+return (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
+}
+}
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+const median = findMedianSortedArrays(arr1, arr2);
+console.log(median);
+
+IIFE:
+(function() {
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+const mergedArray = arr1.concat(arr2);
+const sortedArray = mergedArray.sort((a, b) => a - b);
+const length = sortedArray.length;
+const midIndex = Math.floor(length / 2);
+let median;
+if (length % 2 !== 0) {
+median = sortedArray[midIndex];
+} else {
+median = (sortedArray[midIndex - 1] + sortedArray[midIndex]) / 2;
+}
+console.log(median);
+})();
+
+7]REMOVE DUPLICATES FROM AN ARRAY
+
+ANONYMOUS:
+const array = [1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8];
+const uniqueArray = (function(arr) {
+return arr.filter(function(value, index, self) {
+return self.indexOf(value) === index;
+});
+})(array);
+console.log(uniqueArray);
+
+IIFE:
+const array = [1, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8];
+const uniqueArray = (() => {
+return array.filter((value, index, self) => {
+return self.indexOf(value) === index;
+});
+})();
+console.log(uniqueArray);
+
+8]TO ROTATE ARRAY BY K TIMES
+
+ANONYMOUS:
+const rotateArray1 = function(nums, k) {
+for (let i = 0; i < k; i++) {
+nums.unshift(nums.pop());
+}
+return nums;
+};
+nums=[1,2,3,4,5]
+console.log(rotateArray1(nums,3))
+
+IIFE:
+const array = [1, 2, 3, 4, 5];
+const k = 3;
+const rotatedArray = (function(arr, k) {
+const len = arr.length;
+const rotations = k % len; 
+const rotated = arr.slice(rotations).concat(arr.slice(0, rotations));
+return rotated;
+})(array, k);
+console.log(rotatedArray);
+
+ARROW FUNCTIONS:
+
+1]TO PRINT ODD NUMBERS IN AN ARRAY:
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbers.forEach(number => {
+if (number % 2 !== 0) {
+console.log(number);
+}
+});
+
+2] TO CONVERT ALL THE STRINGS TO TITLE CASE IN A STRING ARRAY
+
+const strings = ["hello", "world", "javascript", "example"];
+const titleCaseStrings = strings.map(string => {
+return string.charAt(0).toUpperCase() + string.slice(1);
+});
+console.log(titleCaseStrings);
+
+3] SUM OF ALL NUMBERS IN AN ARRAY
+
+var sumarr=  (arr) =>{
+let sum=0
+for(var i = 0; i< arr.length; i++)
+{
+ sum +=arr[i]
+}
+console.log(sum)
+};
+sumarr([1,2,3,4,5]);
+
+4] RETURN ALL THE PRIME NUMBERS IN AN ARRAY
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const isPrime = num => {
+if (num < 2) {
+return false;
+}
+for (let i = 2; i <= Math.sqrt(num); i++) {
+if (num % i === 0) {
+return false;
+}
+}
+return true;
+};
+const primeNumbers = numbers.filter(isPrime);
+console.log(primeNumbers);
+
+5] RETURN ALL THE PALINDROMES IN AN ARRAY
+
+const arr = ['racecar', 1344, 12321, 'did', 'cannot'];
+const isPalindrome = el => {
+const str = String(el);
+let i = 0;
+let j = str.length - 1;
+while(i < j) {
+if(str[i] === str[j]) {
+i++;
+j--;
+}
+else {
+return false;
+}
+}
+return true;
+};
+const findPalindrome = arr => {
+return arr.filter(el => isPalindrome(el));
+};
+console.log(findPalindrome(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
